@@ -195,3 +195,13 @@ Fixing PATH solves most issues related to Go CLI tools.
 ```bash
 export PATH=$PATH:$(go env GOPATH)/bin
 ```
+
+# Clean and fix project dependencies automatically
+```bash
+go mod tidy
+```
+### 1. Adds missing dependencies:
+If you use a package in code but it’s not in **go.mod** it will add it.
+
+### 2. Removes unused dependencies
+If a package is in **go.mod** but not used → it removes it.
